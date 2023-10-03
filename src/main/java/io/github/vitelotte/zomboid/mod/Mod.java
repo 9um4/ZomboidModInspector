@@ -27,4 +27,20 @@ public class Mod {
         this.incompatibles = incompatibles;
         this.explanations = explanations;
     }
+
+    public Mod(String workshopName,
+               String workShopLink,
+               String packageName,
+               Set<Category> categories,
+               Set<Mod> dependencies,
+               Set<Mod> incompatibles,
+               String explanations)
+    {
+        this.workShop = new WorkShop(workshopName, workShopLink);
+        this.packageName = packageName;
+        this.categories = categories;
+        this.dependencies = dependencies;
+        this.incompatibles = incompatibles;
+        this.explanations = explanations;
+    }
 }
