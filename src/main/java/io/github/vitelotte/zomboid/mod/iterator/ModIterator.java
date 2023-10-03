@@ -18,6 +18,10 @@ public class ModIterator {
         for (File folder : folders) {
             modFolders.addAll(getModDirectories(folder));
         }
+
+        for (File modFolder: modFolders) {
+            System.out.println(getModInformation(modFolder));
+        }
     }
 
     private static Set<File> getModDirectories(File folder) {
@@ -37,7 +41,7 @@ public class ModIterator {
         return modDirectories;
     }
 
-    private static Map<String, String> getModInformation(File modFolder) {
+    private static Map<String, String> getModInformation(File modFolder) throws FileNotFoundException {
         File modInfoFile = new File(modFolder.getPath() + "\\mod.info");
         if (modInfoFile.isFile()) {
             Map<String, String> modInfo = new HashMap<>();
